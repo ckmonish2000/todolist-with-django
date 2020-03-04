@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo</title>
+    <style>
+        body{
+            background: black;
+            color: white;
+            font-family: cursive;
+        }
+        #todo{
+            padding: 10px;
+            font-family: cursive;
+            font-size: medium;
+            margin: 5px;
+        }
+        #desc{
+            padding: 10px;
+            font-family: cursive;
+            font-size: medium;
+            margin: 5px;
+        }
+        #btn{
+            border-radius: 10px;
+            padding: 10px;;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            font-family: cursive;
+
+        }
+        .cent{
+            display: flex;
+            flex-wrap: wrap;
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="cent">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="text" name="item" placeholder="todo item" id="todo">
+        
+        <input type="text" name="desc" placeholder="descriptio" id="desc">
+        
+        <input id="btn" type="submit" value="add">
+    </form>
+</div>
+    <br>
+<ul>
+    {% for x in stuff %}
+<li><a href="/{{x}}">{{x}}</a></li><br>
+    {% endfor %}
+</ul>
+</body>
+</html>
